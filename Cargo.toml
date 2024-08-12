@@ -1,0 +1,12 @@
+[package]
+name = "gogh"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+candle-core = "0.4.0"
+reqwest = { version = "0.12.5", features = ["json", "multipart"] }
+serde = { version = "1.0.207", features = ["derive"] }
+serde_json = "1.0.124"
+stable-diffusion = { version = "0.1.9", default-features = false, features = ["metal"] }
+tokio = { version = "1.39.2", features = ["full"] }
