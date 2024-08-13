@@ -1,0 +1,27 @@
+syntax="proto3";
+
+package gogh.v1;
+
+message GenerateImageRequest {
+ string prompt = 1;
+}
+
+message GenerateImageResponse {
+ string id = 1;
+ bytes image = 2;
+}
+
+
+message GetImageRequest {
+ string id = 1;
+}
+
+message GetImageResponse {
+ bytes image = 1;
+}
+
+
+service Gogh {
+ rpc GenerateImage(GenerateImageRequest) returns (GenerateImageResponse);
+ rpc GetImage(GetImageRequest) returns (GetImageResponse);
+}
